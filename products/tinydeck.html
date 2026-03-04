@@ -40,7 +40,9 @@
 
     <!-- Product header -->
     <div class="product-header">
-      <div class="product-header-image">🖥️</div>
+      <div class="product-header-image">
+        <img src="../images/tinydeck/hero-desk.jpg" alt="TinyDeck on a desk" />
+      </div>
       <div class="product-header-info">
         <div class="status-row">
           <span class="badge badge-green"><span class="dot"></span> Available</span>
@@ -48,9 +50,8 @@
         </div>
         <h1>TinyDeck</h1>
         <p class="tagline">
-          A compact, programmable display deck with per-key color screens.
-          Assign custom images, icons, and shortcuts to every key for a
-          control surface that's entirely yours.
+          A compact always-on desk display that shows the time, weather, your photos,
+          a focus timer, and live bus arrivals — all from a single glanceable screen.
         </p>
         <div class="product-header-actions">
           <a href="#" class="btn btn-primary" onclick="switchTab('firmware'); return false;">Download Firmware</a>
@@ -73,41 +74,86 @@
         <div class="desc-body">
           <h2>What is TinyDeck?</h2>
           <p>
-            TinyDeck is a compact USB device featuring multiple programmable keys,
-            each with its own small color display. Upload custom images, set shortcuts,
-            or trigger macros — TinyDeck turns any desk into a personalized command center.
+            TinyDeck is a compact always-on desk display built around a vivid 2.8" TFT color
+            touchscreen. Connected to your Wi-Fi, it surfaces the information you actually need
+            throughout your day — current time and weather, a rotating photo collection from
+            your microSD card, a Pomodoro focus timer, and live bus arrival times for your
+            configured stop so you can step out at exactly the right moment.
           </p>
           <p>
-            The companion configuration tool lets you assign actions, swap images, and
-            update firmware without touching a line of code. Power users can dive deeper
-            with open firmware and full serial access.
+            Everything is configured through a built-in web interface — open it from any
+            browser on the same network to set your location, bus stop, photo shuffle
+            preferences, and active display hours for each widget. No app installs or
+            technical knowledge required.
           </p>
 
           <h2 style="margin-top:1.5rem;">Features</h2>
           <ul class="features-list">
-            <li>Per-key color display — show custom images or live data on each key</li>
-            <li>USB plug-and-play — no drivers required on Windows, macOS, or Linux</li>
-            <li>Open firmware — modify and flash your own builds</li>
-            <li>Image Prep Tool — crop and convert images to exact display dimensions</li>
-            <li>Compact form factor — fits any desk setup without taking up space</li>
-            <li>Fully programmable shortcuts and macro sequences</li>
+            <li>Clock &amp; weather — always-on time and current conditions at a glance</li>
+            <li>Photo frame — cycles through images on your microSD card with optional shuffle</li>
+            <li>Pomodoro timer — structured focus sessions to keep you productive</li>
+            <li>Bus arrival — live arrival times for your stop, shown automatically during your set hours</li>
+            <li>Wi-Fi connected — pulls live data without any cables beyond USB power</li>
+            <li>Web configuration — set up everything from a browser on the same network</li>
+            <li>Image Prep Tool — crop and export photos at the exact 240 × 320 px display size</li>
           </ul>
         </div>
 
         <div class="specs-card">
           <h3>Specifications</h3>
           <table class="specs-table">
-            <tr><td>Display</td><td>[Placeholder] px</td></tr>
-            <tr><td>Keys</td><td>[Placeholder]</td></tr>
+            <tr><td>Display</td><td>2.8" TFT Color · 240 × 320 px</td></tr>
             <tr><td>Connection</td><td>USB-C</td></tr>
             <tr><td>Compatibility</td><td>Win / macOS / Linux</td></tr>
-            <tr><td>Firmware</td><td>Open source</td></tr>
             <tr><td>Image format</td><td>PNG / BMP</td></tr>
-            <tr><td>Dimensions</td><td>[Placeholder] mm</td></tr>
-            <tr><td>Weight</td><td>[Placeholder] g</td></tr>
+            <tr><td>Dimensions</td><td>85 × 60 × 15 mm</td></tr>
+            <tr><td>Weight</td><td>66 g</td></tr>
           </table>
         </div>
       </div>
+
+      <!-- Showcase -->
+      <div class="showcase-section">
+        <h2>What can it display?</h2>
+        <div class="showcase-grid">
+          <div class="showcase-item">
+            <img src="../images/tinydeck/showcase-ironman.jpg" alt="Iron Man photo frame on TinyDeck" />
+            <span>Photo Frame</span>
+          </div>
+          <div class="showcase-item">
+            <img src="../images/tinydeck/showcase-clock.jpg" alt="Clock and weather on TinyDeck" />
+            <span>Clock &amp; Weather</span>
+          </div>
+          <div class="showcase-item">
+            <img src="../images/tinydeck/showcase-pomodoro.jpg" alt="Pomodoro timer on TinyDeck" />
+            <span>Pomodoro Timer</span>
+          </div>
+          <div class="showcase-item">
+            <img src="../images/tinydeck/showcase-bus.jpg" alt="Bus arrival times on TinyDeck" />
+            <span>Bus Arrival</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Device views -->
+      <div class="device-views">
+        <h2>The Device</h2>
+        <div class="device-views-grid">
+          <div class="device-view-item">
+            <img src="../images/tinydeck/view-front.jpg" alt="TinyDeck front view" />
+            <span>Front</span>
+          </div>
+          <div class="device-view-item">
+            <img src="../images/tinydeck/view-back.jpg" alt="TinyDeck back view" />
+            <span>Back</span>
+          </div>
+          <div class="device-view-item">
+            <img src="../images/tinydeck/view-side.jpg" alt="TinyDeck side view" />
+            <span>Side</span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- ===== Firmware ===== -->
@@ -136,9 +182,10 @@
       </div>
 
       <div class="flash-note">
-        <strong>How to flash:</strong> Connect TinyDeck via USB, hold the BOOT button while
-        plugging in to enter bootloader mode, then use the flashing tool to upload the
-        <code>.bin</code> file. Full instructions are included in the firmware package.
+        <strong>How to update:</strong> Download the firmware file above, then open the
+        TinyDeck configuration page in your browser and go to the
+        <strong>Firmware Update</strong> section. Select the file and follow the on-screen
+        instructions — TinyDeck will apply the update and restart automatically.
       </div>
     </div>
 
@@ -153,36 +200,79 @@
 
         <details class="faq-item">
           <summary>
-            How do I connect TinyDeck to my computer?
+            How do I set up TinyDeck for the first time?
             <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </summary>
           <div class="faq-answer">
-            TinyDeck connects via USB-C. Plug it into any available USB port — no drivers are
-            needed on Windows 10/11, macOS, or Linux. It will appear as a standard HID device.
+            Plug TinyDeck into any USB power source using the USB-C cable. On first boot it will
+            broadcast its own Wi-Fi hotspot — connect to it from your phone or laptop, then enter
+            your home Wi-Fi credentials. Once connected, TinyDeck will restart and join your
+            network automatically on every subsequent boot.
           </div>
         </details>
 
         <details class="faq-item">
           <summary>
-            What image dimensions does TinyDeck use?
+            How do I access the configuration page?
             <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </summary>
           <div class="faq-answer">
-            Each key display is <strong>[Placeholder] × [Placeholder] pixels</strong>.
-            Use the <strong>Image Prep Tool</strong> tab on this page to upload, crop, and
-            export your images at the exact correct resolution before loading them onto the device.
+            Make sure your phone or computer is on the same Wi-Fi network as TinyDeck.
+            The device's IP address is shown on its screen — type that address into any browser
+            to open the configuration page. From there you can adjust all settings including
+            your location, bus stop, photo preferences, and display schedules.
           </div>
         </details>
 
         <details class="faq-item">
           <summary>
-            What image formats are supported?
+            How do I add photos to the photo frame?
             <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </summary>
           <div class="faq-answer">
-            TinyDeck accepts PNG and BMP image files. The Image Prep Tool on this page handles
-            resizing and conversion automatically — just upload any common image and download
-            the prepared file.
+            Copy your images onto a microSD card and insert it into TinyDeck. Images must be
+            <strong>240 × 320 px</strong> in PNG or BMP format — use the
+            <strong>Image Prep Tool</strong> tab on this page to crop and export any photo at
+            the correct size. TinyDeck will cycle through all images on the card automatically,
+            with an optional shuffle mode to vary the order.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How does the bus arrival feature work?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            Enter your bus stop number in the configuration page. TinyDeck will fetch live
+            arrival times and display them on screen so you can time your walk to the stop.
+            You can also set an active time range — for example, only show bus times during
+            your morning and evening commute hours — so the screen switches to another widget
+            outside of those times.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How does the Pomodoro timer work?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            Tap the screen to start a Pomodoro session. TinyDeck will count down a focused
+            work interval followed by a short break, displaying the timer prominently on screen
+            so you always know where you are in the cycle — without reaching for your phone.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            What image dimensions and formats does TinyDeck support?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            The display is <strong>240 × 320 pixels</strong> and accepts PNG and BMP files.
+            Use the <strong>Image Prep Tool</strong> tab on this page to upload any photo,
+            crop it to the right ratio, and download it ready to copy onto your microSD card.
           </div>
         </details>
 
@@ -192,34 +282,23 @@
             <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </summary>
           <div class="faq-answer">
-            Download the latest firmware from the <strong>Firmware</strong> tab.
-            Hold the BOOT button while connecting TinyDeck via USB to enter bootloader mode,
-            then use the included flashing tool to upload the <code>.bin</code> file.
-            Detailed step-by-step instructions are included in the firmware package.
+            Download the latest firmware file from the <strong>Firmware</strong> tab, then
+            open the TinyDeck configuration page in your browser. Navigate to the
+            <strong>Firmware Update</strong> section, select the downloaded file, and follow
+            the on-screen instructions. TinyDeck will apply the update and restart automatically.
           </div>
         </details>
 
         <details class="faq-item">
           <summary>
-            Is the firmware open source?
+            TinyDeck is not connecting to my Wi-Fi. What do I do?
             <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </summary>
           <div class="faq-answer">
-            Yes. The TinyDeck firmware is open source and can be modified and reflashed freely.
-            Source code and build instructions are provided with the firmware download.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>
-            My TinyDeck isn't recognized by my computer. What do I do?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </summary>
-          <div class="faq-answer">
-            Try a different USB cable (some cables are charge-only) and a different USB port.
-            If the problem persists, try holding the BOOT button during connection to enter
-            bootloader mode and reflash the firmware. If you're still stuck,
-            <a href="mailto:hello@xclusivelab.com">contact us</a>.
+            Make sure you are connecting to a 2.4 GHz network — TinyDeck does not support
+            5 GHz Wi-Fi. Double-check your password on the configuration page. If TinyDeck
+            cannot reach the network it will rebroadcast its setup hotspot so you can
+            re-enter your credentials. Still stuck? <a href="mailto:hello@xclusivelab.com">Contact us</a>.
           </div>
         </details>
 
@@ -245,7 +324,7 @@
           </div>
           <div class="setting-group">
             <label>Target Height (px)</label>
-            <input type="number" id="target-height" value="135" min="1" max="4096" />
+            <input type="number" id="target-height" value="320" min="1" max="4096" />
           </div>
           <div class="setting-group">
             <label>Output Format</label>
