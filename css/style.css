@@ -725,9 +725,18 @@ nav {
 .showcase-item img {
   width: 100%;
   aspect-ratio: 9 / 16;
-  object-fit: cover;
+  object-fit: contain;
+  background: #0f0f1a;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
+}
+.showcase-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.showcase-item-wide img {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #0f0f1a;
 }
 .showcase-item span {
   font-size: 0.8rem;
