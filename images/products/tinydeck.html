@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TinyDeck — Always-On Desk Display | Xclusive Labs</title>
+  <meta name="description" content="TinyDeck is a compact Wi-Fi desk display showing clock, weather, a photo frame, Pomodoro timer, and live bus arrivals on a vivid 2.8&quot; TFT screen." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Cropper.js for Image Prep Tool -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      Xclusive<span class="logo-accent">Labs</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page content -->
+  <div class="product-page-wrap">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">›</span>
+      <a href="../index.html#products">Products</a>
+      <span class="sep">›</span>
+      <span>TinyDeck</span>
+    </div>
+
+    <!-- Product header -->
+    <div class="product-header">
+      <div class="product-header-image">
+        <img src="../images/tinydeck/hero-desk.jpg" alt="TinyDeck on a desk" />
+      </div>
+      <div class="product-header-info">
+        <div class="status-row">
+          <span class="badge badge-green"><span class="dot"></span> Available</span>
+          <span class="badge badge-purple">Display Deck</span>
+        </div>
+        <h1>TinyDeck</h1>
+        <p class="tagline">
+          A compact always-on desk display that shows the time, weather, your photos,
+          a focus timer, and live bus arrivals — all from a single glanceable screen.
+        </p>
+        <div class="product-header-actions">
+          <a href="#" class="btn btn-primary" onclick="switchTab('firmware'); return false;">Download Firmware</a>
+          <a href="#" class="btn btn-outline" onclick="switchTab('image-prep'); return false;">Image Prep Tool</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs-wrap" id="tabs">
+      <button class="tab-btn active" data-tab="description">Description</button>
+      <button class="tab-btn" data-tab="firmware">Firmware</button>
+      <button class="tab-btn" data-tab="faq">FAQ</button>
+      <button class="tab-btn" data-tab="image-prep">🖼 Image Prep Tool</button>
+    </div>
+
+    <!-- ===== Description ===== -->
+    <div class="tab-panel active" id="tab-description">
+      <div class="desc-grid">
+        <div class="desc-body">
+          <h2>What is TinyDeck?</h2>
+          <p>
+            TinyDeck is a compact always-on desk display built around a vivid 2.8" TFT color
+            touchscreen. Connected to your Wi-Fi, it surfaces the information you actually need
+            throughout your day — current time and weather, a rotating photo collection from
+            your microSD card, a Pomodoro focus timer, and live bus arrival times for your
+            configured stop so you can step out at exactly the right moment.
+          </p>
+          <p>
+            Everything is configured through a built-in web interface — open it from any
+            browser on the same network to set your location, bus stop, photo shuffle
+            preferences, and active display hours for each widget. No app installs or
+            technical knowledge required.
+          </p>
+
+          <h2 style="margin-top:1.5rem;">Features</h2>
+          <ul class="features-list">
+            <li>Clock &amp; weather — always-on time and current conditions at a glance</li>
+            <li>Photo frame — cycles through images on your microSD card with optional shuffle</li>
+            <li>Pomodoro timer — structured focus sessions to keep you productive</li>
+            <li>Bus arrival — live arrival times for your stop, shown automatically during your set hours</li>
+            <li>Wi-Fi connected — pulls live data without any cables beyond USB power</li>
+            <li>Web configuration — set up everything from a browser on the same network</li>
+            <li>Image Prep Tool — crop and export photos at the exact 240 × 320 px display size</li>
+          </ul>
+        </div>
+
+        <div class="specs-card">
+          <h3>Specifications</h3>
+          <table class="specs-table">
+            <tr><td>Display</td><td>2.8" TFT Color · 240 × 320 px</td></tr>
+            <tr><td>Connection</td><td>USB-C</td></tr>
+            <tr><td>Compatibility</td><td>Win / macOS / Linux</td></tr>
+            <tr><td>Image format</td><td>PNG / BMP</td></tr>
+            <tr><td>Dimensions</td><td>85 × 60 × 15 mm</td></tr>
+            <tr><td>Weight</td><td>66 g</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Showcase -->
+      <div class="showcase-section">
+        <h2>What can it display?</h2>
+        <div class="showcase-grid">
+          <div class="showcase-item">
+            <img src="../images/tinydeck/showcase-ironman.jpg" alt="Iron Man photo frame on TinyDeck" />
+            <span>Photo Frame</span>
+          </div>
+          <div class="showcase-item">
+            <img src="../images/tinydeck/showcase-clock.jpg" alt="Clock and weather on TinyDeck" />
+            <span>Clock &amp; Weather</span>
+          </div>
+          <div class="showcase-item">
+            <img src="../images/tinydeck/showcase-pomodoro.jpg" alt="Pomodoro timer on TinyDeck" />
+            <span>Pomodoro Timer</span>
+          </div>
+          <div class="showcase-item">
+            <img src="../images/tinydeck/showcase-bus.jpg" alt="Bus arrival times on TinyDeck" />
+            <span>Bus Arrival</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Device views -->
+      <div class="device-views">
+        <h2>The Device</h2>
+        <div class="device-views-grid">
+          <div class="device-view-item">
+            <img src="../images/tinydeck/view-front.jpg" alt="TinyDeck front view" />
+            <span>Front</span>
+          </div>
+          <div class="device-view-item">
+            <img src="../images/tinydeck/view-back.jpg" alt="TinyDeck back view" />
+            <span>Back</span>
+          </div>
+          <div class="device-view-item">
+            <img src="../images/tinydeck/view-side.jpg" alt="TinyDeck side view" />
+            <span>Side</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== Firmware ===== -->
+    <div class="tab-panel" id="tab-firmware">
+      <div class="firmware-header">
+        <h2>Firmware Downloads</h2>
+        <p>Download and flash the latest firmware to keep your TinyDeck up to date.</p>
+      </div>
+
+      <div class="firmware-cards">
+
+        <div class="firmware-card latest">
+          <div class="firmware-card-icon">📦</div>
+          <div class="firmware-card-info">
+            <div class="fw-name">
+              TinyDeck Firmware v1.0.0
+              <span class="badge badge-purple">Latest</span>
+            </div>
+            <div class="fw-meta">Released — [Date placeholder] &nbsp;·&nbsp; [Size placeholder]</div>
+          </div>
+          <a href="#" class="btn btn-primary btn-sm">Download</a>
+        </div>
+
+        <!-- Add more versions here as they are released -->
+
+      </div>
+
+      <div class="flash-note">
+        <strong>How to update:</strong> Download the firmware file above, then open the
+        TinyDeck configuration page in your browser and go to the
+        <strong>Firmware Update</strong> section. Select the file and follow the on-screen
+        instructions — TinyDeck will apply the update and restart automatically.
+      </div>
+    </div>
+
+    <!-- ===== FAQ ===== -->
+    <div class="tab-panel" id="tab-faq">
+      <div class="faq-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Can't find what you're looking for? <a href="mailto:hello@xclusivelab.com">Contact us</a>.</p>
+      </div>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>
+            How do I set up TinyDeck for the first time?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            Plug TinyDeck into any USB power source using the USB-C cable. On first boot it will
+            broadcast its own Wi-Fi hotspot — connect to it from your phone or laptop, then enter
+            your home Wi-Fi credentials. Once connected, TinyDeck will restart and join your
+            network automatically on every subsequent boot.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How do I access the configuration page?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            Make sure your phone or computer is on the same Wi-Fi network as TinyDeck.
+            The device's IP address is shown on its screen — type that address into any browser
+            to open the configuration page. From there you can adjust all settings including
+            your location, bus stop, photo preferences, and display schedules.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How do I add photos to the photo frame?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            Copy your images onto a microSD card and insert it into TinyDeck. Images must be
+            <strong>240 × 320 px</strong> in PNG or BMP format — use the
+            <strong>Image Prep Tool</strong> tab on this page to crop and export any photo at
+            the correct size. TinyDeck will cycle through all images on the card automatically,
+            with an optional shuffle mode to vary the order.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How does the bus arrival feature work?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            Enter your bus stop number in the configuration page. TinyDeck will fetch live
+            arrival times and display them on screen so you can time your walk to the stop.
+            You can also set an active time range — for example, only show bus times during
+            your morning and evening commute hours — so the screen switches to another widget
+            outside of those times.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How does the Pomodoro timer work?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            Tap the screen to start a Pomodoro session. TinyDeck will count down a focused
+            work interval followed by a short break, displaying the timer prominently on screen
+            so you always know where you are in the cycle — without reaching for your phone.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            What image dimensions and formats does TinyDeck support?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            The display is <strong>240 × 320 pixels</strong> and accepts PNG and BMP files.
+            Use the <strong>Image Prep Tool</strong> tab on this page to upload any photo,
+            crop it to the right ratio, and download it ready to copy onto your microSD card.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How do I update the firmware?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            Download the latest firmware file from the <strong>Firmware</strong> tab, then
+            open the TinyDeck configuration page in your browser. Navigate to the
+            <strong>Firmware Update</strong> section, select the downloaded file, and follow
+            the on-screen instructions. TinyDeck will apply the update and restart automatically.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            TinyDeck is not connecting to my Wi-Fi. What do I do?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            Make sure you are connecting to a 2.4 GHz network — TinyDeck does not support
+            5 GHz Wi-Fi. Double-check your password on the configuration page. If TinyDeck
+            cannot reach the network it will rebroadcast its setup hotspot so you can
+            re-enter your credentials. Still stuck? <a href="mailto:hello@xclusivelab.com">Contact us</a>.
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <!-- ===== Image Prep Tool ===== -->
+    <div class="tab-panel" id="tab-image-prep">
+      <div class="image-prep-tool">
+        <div class="prep-tool-header">
+          <h2>Image Prep Tool</h2>
+          <p>
+            Upload any image, crop it to the correct aspect ratio, and download it
+            at the exact pixel dimensions required by TinyDeck.
+          </p>
+        </div>
+
+        <!-- Settings -->
+        <div class="prep-settings">
+          <div class="setting-group">
+            <label>Target Width (px)</label>
+            <input type="number" id="target-width" value="240" min="1" max="4096" />
+          </div>
+          <div class="setting-group">
+            <label>Target Height (px)</label>
+            <input type="number" id="target-height" value="320" min="1" max="4096" />
+          </div>
+          <div class="setting-group">
+            <label>Output Format</label>
+            <select id="output-format">
+              <option value="image/png">PNG</option>
+              <option value="image/jpeg">JPEG</option>
+            </select>
+          </div>
+          <span class="setting-hint">⚠ Update dimensions to match your TinyDeck display spec.</span>
+        </div>
+
+        <!-- Upload zone -->
+        <div class="upload-zone" id="upload-zone">
+          <div class="upload-icon">🖼️</div>
+          <p>Drop an image here or <span>click to upload</span></p>
+          <p class="upload-hint">Supports JPG, PNG, GIF, BMP, WebP</p>
+          <input type="file" id="file-input" accept="image/*" hidden />
+        </div>
+
+        <!-- Crop area (hidden until image loaded) -->
+        <div class="crop-container hidden" id="crop-container">
+          <div class="crop-area">
+            <img id="crop-image" src="" alt="Image to crop" />
+          </div>
+          <div class="crop-actions">
+            <button class="btn btn-ghost btn-sm" id="reset-btn">← Change Image</button>
+            <button class="btn btn-primary" id="process-btn">Crop &amp; Process →</button>
+          </div>
+        </div>
+
+        <!-- Result (hidden until processed) -->
+        <div class="result-container hidden" id="result-container">
+          <div class="result-preview">
+            <canvas id="result-canvas"></canvas>
+          </div>
+          <div class="result-info">
+            <p>✓ Image ready</p>
+            <span id="result-dimensions"></span>
+          </div>
+          <div class="result-actions">
+            <button class="btn btn-outline" id="crop-again-btn">Crop Again</button>
+            <button class="btn btn-primary" id="download-btn">⬇ Download Image</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- end tab panels -->
+
+  </div><!-- end product-page-wrap -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Xclusive<span>Labs</span></div>
+      <ul class="footer-links">
+        <li><a href="../index.html#products">Products</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 Xclusive Labs. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cropper.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
+
+  <script>
+    // ─── Tab switching ────────────────────────────────────────────────────────
+    const tabBtns   = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    function switchTab(tabId) {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanels.forEach(p => p.classList.remove('active'));
+      const btn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+      const panel = document.getElementById(`tab-${tabId}`);
+      if (btn)   btn.classList.add('active');
+      if (panel) panel.classList.add('active');
+    }
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+    });
+
+    // ─── Image Prep Tool ──────────────────────────────────────────────────────
+    let cropper = null;
+
+    const uploadZone     = document.getElementById('upload-zone');
+    const fileInput      = document.getElementById('file-input');
+    const cropContainer  = document.getElementById('crop-container');
+    const cropImage      = document.getElementById('crop-image');
+    const resultContainer= document.getElementById('result-container');
+    const resultCanvas   = document.getElementById('result-canvas');
+    const processBtn     = document.getElementById('process-btn');
+    const downloadBtn    = document.getElementById('download-btn');
+    const resetBtn       = document.getElementById('reset-btn');
+    const cropAgainBtn   = document.getElementById('crop-again-btn');
+    const widthInput     = document.getElementById('target-width');
+    const heightInput    = document.getElementById('target-height');
+    const formatSelect   = document.getElementById('output-format');
+
+    const targetW = () => Math.max(1, parseInt(widthInput.value)  || 240);
+    const targetH = () => Math.max(1, parseInt(heightInput.value) || 135);
+
+    // Rebuild cropper when dimensions change while crop UI is open
+    [widthInput, heightInput].forEach(el => {
+      el.addEventListener('change', () => {
+        if (!cropper) return;
+        cropper.setAspectRatio(targetW() / targetH());
+      });
+    });
+
+    // Upload zone — click
+    uploadZone.addEventListener('click', () => fileInput.click());
+
+    // Upload zone — drag & drop
+    uploadZone.addEventListener('dragover', e => {
+      e.preventDefault();
+      uploadZone.classList.add('drag-over');
+    });
+    uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('drag-over'));
+    uploadZone.addEventListener('drop', e => {
+      e.preventDefault();
+      uploadZone.classList.remove('drag-over');
+      const file = e.dataTransfer.files[0];
+      if (file && file.type.startsWith('image/')) loadImage(file);
+    });
+
+    fileInput.addEventListener('change', e => {
+      const file = e.target.files[0];
+      if (file) loadImage(file);
+    });
+
+    function loadImage(file) {
+      const reader = new FileReader();
+      reader.onload = e => {
+        cropImage.src = e.target.result;
+        show(cropContainer);
+        hide(uploadZone);
+        hide(resultContainer);
+
+        if (cropper) { cropper.destroy(); cropper = null; }
+
+        cropImage.onload = () => {
+          cropper = new Cropper(cropImage, {
+            aspectRatio: targetW() / targetH(),
+            viewMode: 1,
+            dragMode: 'move',
+            autoCropArea: 0.9,
+            responsive: true,
+            background: false,
+          });
+        };
+      };
+      reader.readAsDataURL(file);
+    }
+
+    processBtn.addEventListener('click', () => {
+      if (!cropper) return;
+      const w = targetW();
+      const h = targetH();
+      const croppedCanvas = cropper.getCroppedCanvas({ width: w, height: h });
+
+      resultCanvas.width  = w;
+      resultCanvas.height = h;
+      resultCanvas.getContext('2d').drawImage(croppedCanvas, 0, 0);
+
+      document.getElementById('result-dimensions').textContent = `${w} × ${h} px`;
+      hide(cropContainer);
+      show(resultContainer);
+    });
+
+    downloadBtn.addEventListener('click', () => {
+      const format = formatSelect.value;
+      const ext    = format === 'image/jpeg' ? 'jpg' : 'png';
+      const link   = document.createElement('a');
+      link.download = `tinydeck-image.${ext}`;
+      link.href     = resultCanvas.toDataURL(format, 0.95);
+      link.click();
+    });
+
+    resetBtn.addEventListener('click', resetTool);
+
+    cropAgainBtn.addEventListener('click', () => {
+      hide(resultContainer);
+      show(cropContainer);
+
+      if (cropper) { cropper.destroy(); cropper = null; }
+      cropImage.onload = () => {
+        cropper = new Cropper(cropImage, {
+          aspectRatio: targetW() / targetH(),
+          viewMode: 1,
+          dragMode: 'move',
+          autoCropArea: 0.9,
+          responsive: true,
+          background: false,
+        });
+      };
+      // Re-trigger onload in case image is already cached
+      const src = cropImage.src;
+      cropImage.src = '';
+      cropImage.src = src;
+    });
+
+    function resetTool() {
+      if (cropper) { cropper.destroy(); cropper = null; }
+      cropImage.src = '';
+      fileInput.value = '';
+      hide(cropContainer);
+      hide(resultContainer);
+      show(uploadZone);
+    }
+
+    function show(el) { el.classList.remove('hidden'); }
+    function hide(el) { el.classList.add('hidden'); }
+  </script>
+
+</body>
+</html>
