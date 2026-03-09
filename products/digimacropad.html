@@ -112,21 +112,21 @@
         <h2>See it in action</h2>
         <div class="showcase-grid showcase-grid-3">
           <div class="showcase-item">
-            <img src="../images/digimacropad/showcase-clock-weather.jpg" alt="Clock and weather shortcut page on DigiMacroPad" />
+            <img src="../images/digimacropad/showcase-clock-weather.jpg" alt="Clock and weather shortcut page on DigiMacroPad" class="lightbox-trigger" />
             <span>Clock &amp; Weather</span>
           </div>
           <div class="showcase-item">
-            <img src="../images/digimacropad/showcase-excel.jpg" alt="Excel shortcuts page on DigiMacroPad" />
+            <img src="../images/digimacropad/showcase-excel.jpg" alt="Excel shortcuts page on DigiMacroPad" class="lightbox-trigger" />
             <span>Excel Shortcuts</span>
           </div>
           <div class="showcase-item">
-            <img src="../images/digimacropad/showcase-general.jpg" alt="General shortcuts page on DigiMacroPad" />
+            <img src="../images/digimacropad/showcase-general.jpg" alt="General shortcuts page on DigiMacroPad" class="lightbox-trigger" />
             <span>General Shortcuts</span>
           </div>
         </div>
 
         <div class="showcase-item showcase-item-wide" style="margin-top:1rem;">
-          <img src="../images/digimacropad/showcase-config.jpg" alt="Shortcut configuration interface for DigiMacroPad" />
+          <img src="../images/digimacropad/showcase-config.jpg" alt="Shortcut configuration interface for DigiMacroPad" class="lightbox-trigger" />
           <span>Configuration</span>
         </div>
       </div>
@@ -250,6 +250,11 @@
     </div>
   </footer>
 
+  <!-- Lightbox -->
+  <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;cursor:zoom-out;">
+    <img id="lightbox-img" src="" alt="" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.6);" />
+  </div>
+
   <script>
     const tabBtns   = document.querySelectorAll('.tab-btn');
     const tabPanels = document.querySelectorAll('.tab-panel');
@@ -264,6 +269,32 @@
     }
 
     tabBtns.forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
+
+    // Lightbox
+    const lightbox    = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.lightbox-trigger').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
   </script>
 
 </body>

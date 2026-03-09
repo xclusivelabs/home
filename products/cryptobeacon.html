@@ -149,15 +149,15 @@
         <h2>What does it display?</h2>
         <div class="showcase-grid">
           <div class="showcase-item">
-            <img src="../images/cryptobeacon/showcase-overview.jpg" alt="CryptoBeacon overview screen" />
+            <img src="../images/cryptobeacon/showcase-overview.jpg" alt="CryptoBeacon overview screen" class="lightbox-trigger" />
             <span>Overview</span>
           </div>
           <div class="showcase-item">
-            <img src="../images/cryptobeacon/showcase-clock.jpg" alt="CryptoBeacon clock and weather screen" />
+            <img src="../images/cryptobeacon/showcase-clock.jpg" alt="CryptoBeacon clock and weather screen" class="lightbox-trigger" />
             <span>Clock &amp; Weather</span>
           </div>
           <div class="showcase-item">
-            <img src="../images/cryptobeacon/showcase-hold.jpg" alt="CryptoBeacon coin detail — hold signal" />
+            <img src="../images/cryptobeacon/showcase-hold.jpg" alt="CryptoBeacon coin detail — hold signal" class="lightbox-trigger" />
             <span>Hold Signal</span>
           </div>
         </div>
@@ -311,6 +311,11 @@
     </div>
   </footer>
 
+  <!-- Lightbox -->
+  <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;cursor:zoom-out;">
+    <img id="lightbox-img" src="" alt="" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.6);" />
+  </div>
+
   <script>
     const tabBtns   = document.querySelectorAll('.tab-btn');
     const tabPanels = document.querySelectorAll('.tab-panel');
@@ -325,6 +330,32 @@
     }
 
     tabBtns.forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
+
+    // Lightbox
+    const lightbox    = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.lightbox-trigger').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
   </script>
 
 </body>
