@@ -115,22 +115,54 @@
       <!-- Showcase -->
       <div class="showcase-section">
         <h2>What can it display?</h2>
-        <div class="showcase-grid">
+
+        <!-- Portrait photos -->
+        <h3 class="showcase-sub-heading">Portrait</h3>
+        <div class="showcase-grid showcase-grid-5">
           <div class="showcase-item">
-            <img src="../images/tinydeck/showcase-ironman.jpg" alt="Iron Man photo frame on TinyDeck" class="lightbox-trigger" />
-            <span>Photo Frame</span>
+            <img src="../images/tinydeck/showcase-portrait-1.jpg" alt="Portrait photo 1 on TinyDeck" class="lightbox-trigger" />
+            <span>Photo 1</span>
           </div>
           <div class="showcase-item">
-            <img src="../images/tinydeck/showcase-clock.jpg" alt="Clock and weather on TinyDeck" class="lightbox-trigger" />
-            <span>Clock &amp; Weather</span>
+            <img src="../images/tinydeck/showcase-portrait-2.jpg" alt="Portrait photo 2 on TinyDeck" class="lightbox-trigger" />
+            <span>Photo 2</span>
           </div>
           <div class="showcase-item">
-            <img src="../images/tinydeck/showcase-pomodoro.jpg" alt="Pomodoro timer on TinyDeck" class="lightbox-trigger" />
-            <span>Pomodoro Timer</span>
+            <img src="../images/tinydeck/showcase-portrait-3.jpg" alt="Portrait photo 3 on TinyDeck" class="lightbox-trigger" />
+            <span>Photo 3</span>
           </div>
           <div class="showcase-item">
-            <img src="../images/tinydeck/showcase-bus.jpg" alt="Bus arrival times on TinyDeck" class="lightbox-trigger" />
-            <span>Bus Arrival</span>
+            <img src="../images/tinydeck/showcase-portrait-4.jpg" alt="Portrait photo 4 on TinyDeck" class="lightbox-trigger" />
+            <span>Photo 4</span>
+          </div>
+          <div class="showcase-item">
+            <img src="../images/tinydeck/showcase-portrait-5.jpg" alt="Portrait photo 5 on TinyDeck" class="lightbox-trigger" />
+            <span>Photo 5</span>
+          </div>
+        </div>
+
+        <!-- Landscape photos -->
+        <h3 class="showcase-sub-heading">Landscape</h3>
+        <div class="showcase-grid showcase-grid-5">
+          <div class="showcase-item showcase-item-wide">
+            <img src="../images/tinydeck/showcase-landscape-1.jpg" alt="Landscape photo 1 on TinyDeck" class="lightbox-trigger" />
+            <span>Photo 1</span>
+          </div>
+          <div class="showcase-item showcase-item-wide">
+            <img src="../images/tinydeck/showcase-landscape-2.jpg" alt="Landscape photo 2 on TinyDeck" class="lightbox-trigger" />
+            <span>Photo 2</span>
+          </div>
+          <div class="showcase-item showcase-item-wide">
+            <img src="../images/tinydeck/showcase-landscape-3.jpg" alt="Landscape photo 3 on TinyDeck" class="lightbox-trigger" />
+            <span>Photo 3</span>
+          </div>
+          <div class="showcase-item showcase-item-wide">
+            <img src="../images/tinydeck/showcase-landscape-4.jpg" alt="Landscape photo 4 on TinyDeck" class="lightbox-trigger" />
+            <span>Photo 4</span>
+          </div>
+          <div class="showcase-item showcase-item-wide">
+            <img src="../images/tinydeck/showcase-landscape-5.jpg" alt="Landscape photo 5 on TinyDeck" class="lightbox-trigger" />
+            <span>Photo 5</span>
           </div>
         </div>
       </div>
@@ -150,6 +182,22 @@
           <div class="device-view-item">
             <img src="../images/tinydeck/view-side.jpg" alt="TinyDeck side view" class="lightbox-trigger" />
             <span>Side</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Configuration pages -->
+      <div class="device-views config-pages">
+        <h2>Configuration</h2>
+        <p class="config-pages-intro">Set up everything from a browser — no app install required.</p>
+        <div class="config-pages-grid">
+          <div class="config-page-item">
+            <img src="../images/tinydeck/config-page-1.jpg" alt="TinyDeck configuration page 1" class="lightbox-trigger" />
+            <span>Page 1</span>
+          </div>
+          <div class="config-page-item">
+            <img src="../images/tinydeck/config-page-2.jpg" alt="TinyDeck configuration page 2" class="lightbox-trigger" />
+            <span>Page 2</span>
           </div>
         </div>
       </div>
@@ -322,6 +370,10 @@
             <label>Target Width (px)</label>
             <input type="number" id="target-width" value="240" min="1" max="4096" />
           </div>
+          <div class="swap-btn-group">
+            <button class="btn btn-outline btn-sm swap-btn" id="swap-dimensions" title="Swap width ↔ height">⇄ Swap</button>
+            <span class="orientation-label" id="orientation-label">Portrait</span>
+          </div>
           <div class="setting-group">
             <label>Target Height (px)</label>
             <input type="number" id="target-height" value="320" min="1" max="4096" />
@@ -329,8 +381,7 @@
           <div class="setting-group">
             <label>Output Format</label>
             <select id="output-format">
-              <option value="image/png">PNG</option>
-              <option value="image/jpeg">JPEG</option>
+              <option value="image/jpeg" selected>JPEG</option>
             </select>
           </div>
           <span class="setting-hint">⚠ Update dimensions to match your TinyDeck display spec.</span>
@@ -365,6 +416,7 @@
             <span id="result-dimensions"></span>
           </div>
           <div class="result-actions">
+            <button class="btn btn-ghost btn-sm" id="new-image-btn">← New Image</button>
             <button class="btn btn-outline" id="crop-again-btn">Crop Again</button>
             <button class="btn btn-primary" id="download-btn">⬇ Download Image</button>
           </div>
@@ -427,18 +479,44 @@
     const downloadBtn    = document.getElementById('download-btn');
     const resetBtn       = document.getElementById('reset-btn');
     const cropAgainBtn   = document.getElementById('crop-again-btn');
+    const newImageBtn    = document.getElementById('new-image-btn');
     const widthInput     = document.getElementById('target-width');
     const heightInput    = document.getElementById('target-height');
     const formatSelect   = document.getElementById('output-format');
+    const swapBtn        = document.getElementById('swap-dimensions');
 
     const targetW = () => Math.max(1, parseInt(widthInput.value)  || 240);
     const targetH = () => Math.max(1, parseInt(heightInput.value) || 135);
 
+    const orientationLabel = document.getElementById('orientation-label');
+
+    function updateOrientationLabel() {
+      const w = targetW();
+      const h = targetH();
+      orientationLabel.textContent = w >= h ? 'Landscape' : 'Portrait';
+    }
+
+    // Swap width ↔ height (portrait ↔ landscape)
+    swapBtn.addEventListener('click', () => {
+      const w = widthInput.value;
+      widthInput.value  = heightInput.value;
+      heightInput.value = w;
+      if (cropper) cropper.setAspectRatio(targetW() / targetH());
+      updateOrientationLabel();
+    });
+
+    // Update label when dimensions are changed manually
+    [widthInput, heightInput].forEach(el => {
+      el.addEventListener('input', updateOrientationLabel);
+    });
+
+    // Set initial label
+    updateOrientationLabel();
+
     // Rebuild cropper when dimensions change while crop UI is open
     [widthInput, heightInput].forEach(el => {
       el.addEventListener('change', () => {
-        if (!cropper) return;
-        cropper.setAspectRatio(targetW() / targetH());
+        if (cropper) cropper.setAspectRatio(targetW() / targetH());
       });
     });
 
@@ -512,6 +590,7 @@
     });
 
     resetBtn.addEventListener('click', resetTool);
+    newImageBtn.addEventListener('click', resetTool);
 
     cropAgainBtn.addEventListener('click', () => {
       hide(resultContainer);
