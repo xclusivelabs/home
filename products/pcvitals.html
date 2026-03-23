@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PCVitals — Xclusive Labs</title>
+  <meta name="description" content="PCVitals: a dedicated always-on display for your PC's live performance stats — CPU, GPU, RAM, network, disk, and battery — on your desk." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      Xclusive<span class="logo-accent">Labs</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="product-page-wrap">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">›</span>
+      <a href="../index.html#products">Products</a>
+      <span class="sep">›</span>
+      <span>PCVitals</span>
+    </div>
+
+    <!-- Product header -->
+    <div class="product-header">
+      <div class="product-header-image">
+        <img src="../images/pcvitals/20260318_232134.jpg" alt="PCVitals displaying live PC stats" />
+      </div>
+      <div class="product-header-info">
+        <div class="status-row">
+          <span class="badge badge-green"><span class="dot"></span> Available</span>
+          <span class="badge badge-purple">PC Monitor</span>
+        </div>
+        <h1>PCVitals</h1>
+        <p class="tagline">
+          Your PC's vitals, always visible. A dedicated Wi-Fi connected display that shows
+          live CPU, GPU temperature, RAM, network, disk, and battery — right on your desk,
+          no alt-tab required.
+        </p>
+        <div class="product-header-actions">
+          <a href="#" class="btn btn-primary" onclick="switchTab('firmware'); return false;">Download Firmware</a>
+          <a href="#" class="btn btn-outline" onclick="switchTab('faq'); return false;">View FAQ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs-wrap">
+      <button class="tab-btn active" data-tab="description">Description</button>
+      <button class="tab-btn" data-tab="firmware">Firmware</button>
+      <button class="tab-btn" data-tab="faq">FAQ</button>
+    </div>
+
+    <!-- ===== Description ===== -->
+    <div class="tab-panel active" id="tab-description">
+      <div class="desc-grid">
+        <div class="desc-body">
+          <h2>What is PCVitals?</h2>
+          <p>
+            PCVitals is a compact, always-on display that shows your PC's live performance
+            data without interrupting your workflow. Set it on your desk, connect it to your
+            Wi-Fi, and let it monitor your system continuously — so you always know what your
+            PC is doing without switching windows or opening task managers.
+          </p>
+          <p>
+            A lightweight companion app runs on your PC and streams system data to the display
+            over your local network. No cloud, no subscriptions — just your stats, live on
+            your desk.
+          </p>
+
+          <div class="flash-note" style="margin-top:1.5rem;">
+            ⚠️ <strong>Compatibility:</strong> PCVitals currently requires <strong>Windows</strong> and an <strong>NVIDIA GPU</strong>.
+            AMD and Intel GPU support is not available at this time.
+          </div>
+
+          <h2 style="margin-top:2rem;">Screen Modes</h2>
+
+          <h3 style="margin-top:1.25rem;">PC Vitals Screen</h3>
+          <p>
+            The main screen shows all key performance metrics at once — CPU usage, GPU
+            temperature, RAM usage, network download and upload speeds, disk activity, and
+            battery percentage. Colour-coded ring gauges make it instantly readable at a glance.
+          </p>
+
+          <h3 style="margin-top:1.25rem;">Clock &amp; Weather Screen</h3>
+          <p>
+            Tap the screen to switch to a clean clock and weather view — showing the current
+            time, date, temperature, and conditions. Tap again to switch back to the vitals
+            screen at any time.
+          </p>
+
+          <h2 style="margin-top:2rem;">All Features</h2>
+          <ul class="features-list">
+            <li>Live CPU usage percentage</li>
+            <li>GPU temperature in real time</li>
+            <li>RAM usage percentage</li>
+            <li>Network download and upload speeds (KB/s)</li>
+            <li>Disk activity (KB/s)</li>
+            <li>Battery percentage</li>
+            <li>Clock &amp; weather screen with tap-to-switch</li>
+            <li>Live connection status and last-updated timestamp</li>
+            <li>Wi-Fi connected — no USB data cable required</li>
+            <li>Lightweight PC companion app — minimal system impact</li>
+            <li>Plug-and-play setup via browser-based configuration</li>
+          </ul>
+        </div>
+
+        <div class="specs-card">
+          <h3>Specifications</h3>
+          <table class="specs-table">
+            <tr><td>Display</td><td>2.8" TFT Color · 240 × 320 px</td></tr>
+            <tr><td>Connectivity</td><td>Wi-Fi 2.4 GHz</td></tr>
+            <tr><td>Power</td><td>USB-C (5 V)</td></tr>
+            <tr><td>Data source</td><td>PC companion app (local network)</td></tr>
+            <tr><td>OS support</td><td>Windows only</td></tr>
+            <tr><td>GPU support</td><td>NVIDIA only</td></tr>
+            <tr><td>Screen modes</td><td>PC Vitals · Clock &amp; Weather</td></tr>
+            <tr><td>Metrics</td><td>CPU, GPU temp, RAM, NET, Disk, Battery</td></tr>
+            <tr><td>Touchscreen</td><td>Yes — tap to switch screens</td></tr>
+            <tr><td>Dimensions</td><td>85 × 60 × 15 mm</td></tr>
+            <tr><td>Weight</td><td>66 g</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Showcase -->
+      <div class="showcase-section">
+        <h2>What does it display?</h2>
+        <div class="showcase-grid" style="grid-template-columns: repeat(2, 1fr);">
+          <div class="showcase-item showcase-item-wide">
+            <img src="../images/pcvitals/20260318_232134.jpg" alt="PCVitals PC metrics screen" class="lightbox-trigger" />
+            <span>PC Vitals</span>
+          </div>
+          <div class="showcase-item showcase-item-wide">
+            <img src="../images/pcvitals/20260318_232144.jpg" alt="PCVitals clock and weather screen" class="lightbox-trigger" />
+            <span>Clock &amp; Weather</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;cursor:zoom-out;">
+        <img id="lightbox-img" src="" alt="" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.6);" />
+      </div>
+
+    </div>
+
+    <!-- ===== Firmware ===== -->
+    <div class="tab-panel" id="tab-firmware">
+      <div class="firmware-header">
+        <h2>Downloads</h2>
+        <p>Download the firmware and companion script to get PCVitals up and running.</p>
+      </div>
+
+      <div class="firmware-cards">
+
+        <div class="firmware-card latest">
+          <div class="firmware-card-icon">📦</div>
+          <div class="firmware-card-info">
+            <div class="fw-name">
+              PCVitals Firmware v1.0.0
+              <span class="badge badge-purple">Latest</span>
+            </div>
+            <div class="fw-meta">Released — [Date placeholder] &nbsp;·&nbsp; [Size placeholder]</div>
+          </div>
+          <a href="#" class="btn btn-primary btn-sm">Download</a>
+        </div>
+
+        <div class="firmware-card">
+          <div class="firmware-card-icon">🐍</div>
+          <div class="firmware-card-info">
+            <div class="fw-name">
+              PCVitals Companion Script v1.0.0
+              <span class="badge badge-purple">Latest</span>
+            </div>
+            <div class="fw-meta">Python · Windows · NVIDIA GPU required</div>
+          </div>
+          <a href="#" class="btn btn-primary btn-sm">Download</a>
+        </div>
+
+      </div>
+
+      <div class="flash-note">
+        <strong>How to update firmware:</strong> Download the firmware file above, then open the
+        PCVitals configuration page in your browser and go to the
+        <strong>Firmware Update</strong> section. Select the file and follow the on-screen
+        instructions — PCVitals will apply the update and restart automatically.
+      </div>
+
+      <div class="flash-note" style="margin-top:1rem;">
+        <strong>How to run the companion script:</strong> Ensure Python is installed on your Windows PC,
+        then run <code>pip install -r requirements.txt</code> to install dependencies. Launch the script
+        with <code>python pcvitals.py</code> — it will start sending your PC's stats to PCVitals
+        automatically over your local network. An NVIDIA GPU is required for GPU temperature data.
+      </div>
+    </div>
+
+    <!-- ===== FAQ ===== -->
+    <div class="tab-panel" id="tab-faq">
+      <div class="faq-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Can't find what you're looking for? <a href="mailto:hello@xclusivelab.com">Contact us</a>.</p>
+      </div>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>
+            How does PCVitals get my PC's data?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            A lightweight companion app runs on your Windows PC and streams system metrics
+            to PCVitals over your local Wi-Fi network. No internet connection or cloud service
+            is involved — all data stays on your local network.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Which operating systems does the companion app support?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            The PCVitals companion app currently supports <strong>Windows only</strong>.
+            Additionally, GPU temperature monitoring requires an <strong>NVIDIA GPU</strong> —
+            AMD and Intel GPUs are not supported at this time.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            What metrics does PCVitals show?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            PCVitals displays CPU usage (%), GPU temperature (°C), RAM usage (%),
+            network download and upload speeds (KB/s), disk activity (KB/s), and battery
+            percentage — all updated live from the companion app.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How do I switch between screens?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            Simply tap the display to switch between the PC Vitals screen and the Clock &amp;
+            Weather screen. Tap again to switch back at any time.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Does the companion app slow down my PC?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            No. The companion app is designed to be extremely lightweight. It reads system
+            metrics and sends them to PCVitals at regular intervals with minimal CPU and
+            memory overhead — you won't notice it running.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How do I set up PCVitals for the first time?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            On first boot, PCVitals creates its own Wi-Fi access point. Connect to it from
+            your phone or computer, then open the configuration page in a browser. Enter your
+            Wi-Fi credentials and the device will connect to your network. Then install and
+            run the companion app on your PC — PCVitals will find it automatically.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Does PCVitals require an internet connection?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-answer">
+            PCVitals connects to your local Wi-Fi network and communicates directly with the
+            companion app on your PC — no internet connection is required for PC metrics.
+            An internet connection is only needed for the Clock &amp; Weather screen to fetch
+            current weather data.
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+  </div><!-- end product-page-wrap -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Xclusive<span>Labs</span></div>
+      <ul class="footer-links">
+        <li><a href="../index.html#products">Products</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 Xclusive Labs. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const tabBtns   = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    function switchTab(tabId) {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanels.forEach(p => p.classList.remove('active'));
+      const btn   = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+      const panel = document.getElementById(`tab-${tabId}`);
+      if (btn)   btn.classList.add('active');
+      if (panel) panel.classList.add('active');
+    }
+
+    tabBtns.forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
+
+    // Lightbox
+    const lightbox    = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.lightbox-trigger').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+</body>
+</html>

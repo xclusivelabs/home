@@ -353,6 +353,29 @@ nav {
   display: block;
 }
 
+/* Solution card image areas (no photo — branded gradient placeholder) */
+.solution-card-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.solution-card-img--receptai {
+  background: linear-gradient(135deg, #1a3a2a 0%, #2d6a4f 60%, #52b788 100%);
+}
+
+.solution-card-img--galloporacle {
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b2d4a 60%, #c9a84c 100%);
+}
+
+.solution-card-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
 .product-card h3 {
   font-size: 1.15rem;
   font-weight: 700;
