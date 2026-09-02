@@ -13,7 +13,8 @@
 <style>
 /* Palette mapped onto the Xclusive Labs tokens in ../css/style.css */
 :root{
-  --ground:var(--bg); --paper:var(--surface); --panel-2:#12121f;
+  --ground:var(--bg); --paper:var(--surface); --panel-2:#1c1c2d;
+  --field:#2a2a45; --field-hover:#31314f; --field-line:#5c5c88; --field-line-hover:#7676a8;
   --ink:var(--text); --ink-soft:#8b8bab; --ink-faint:var(--text-muted);
   --line:var(--border); --line-strong:var(--border-light);
   --save:var(--green); --save-ink:#4ade80; --save-tint:rgba(34,197,94,.12);
@@ -54,12 +55,14 @@ header.masthead{margin-bottom:clamp(24px,3vw,36px); padding-bottom:clamp(24px,3v
 .row2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
 @media(max-width:520px){ .row2{grid-template-columns:1fr} }
 .money-input{position:relative; display:flex; align-items:center}
-.money-input .sgd{position:absolute; left:12px; color:var(--ink-faint); font-size:.9rem; pointer-events:none}
-input[type="number"], select{width:100%; font:inherit; color:var(--ink); background:var(--panel-2);
-  border:1px solid var(--line-strong); border-radius:10px; padding:10px 12px;
-  transition:border-color .18s, box-shadow .18s;}
-input[type="number"]:focus, select:focus{outline:0; border-color:var(--accent);
-  box-shadow:0 0 0 3px var(--accent-glow);}
+.money-input .sgd{position:absolute; left:12px; color:#b4b4cc; font-size:.9rem; pointer-events:none; z-index:1}
+input[type="number"], select{width:100%; font:inherit; font-weight:500; color:var(--ink);
+  background:var(--field); border:1px solid var(--field-line); border-radius:10px; padding:10px 12px;
+  transition:background .18s, border-color .18s, box-shadow .18s;}
+input[type="number"]:hover, select:hover{background:var(--field-hover); border-color:var(--field-line-hover);}
+input[type="number"]:focus, select:focus{outline:0; background:var(--field-hover);
+  border-color:var(--accent-hover); box-shadow:0 0 0 3px var(--accent-glow);}
+input[type="number"]::placeholder{color:#9a9ab8; font-weight:400;}
 .money-input input{padding-left:34px; font-feature-settings:"tnum" 1}
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none; margin:0}
@@ -69,7 +72,7 @@ input[type="number"]{-moz-appearance:textfield}
 .subtotal .k{font-size:.85rem; color:var(--ink-soft)}
 .subtotal .v{font-weight:700; font-size:1.4rem;
   font-feature-settings:"tnum" 1; letter-spacing:-.02em}
-.seg{display:inline-flex; background:var(--panel-2); border:1px solid var(--line-strong); border-radius:10px; padding:3px; gap:2px}
+.seg{display:inline-flex; background:var(--field); border:1px solid var(--field-line); border-radius:10px; padding:3px; gap:2px}
 .seg button{font:inherit; font-size:.86rem; border:0; background:transparent; color:var(--ink-soft);
   padding:6px 12px; border-radius:7px; cursor:pointer; transition:background .18s, color .18s}
 .seg button:hover{color:var(--ink)}
@@ -82,7 +85,11 @@ input[type="number"]{-moz-appearance:textfield}
 .rtag.auto{color:var(--save-ink); border-color:var(--save); background:var(--save-tint)}
 .relief .hint{font-size:.79rem; color:var(--ink-faint); margin:5px 0 0; max-width:44ch}
 .relief .control{width:150px; justify-self:end}
-.relief.readonly input{background:transparent; border-style:dashed; color:var(--ink-soft)}
+/* auto-computed fields: same light fill as the editable ones, dashed green edge */
+.relief.readonly input, input._ro{background:var(--field); border-style:dashed;
+  border-color:rgba(34,197,94,.55); color:#c9c9dd}
+.relief.readonly input:hover, input._ro:hover{background:var(--field);
+  border-color:rgba(34,197,94,.55)}
 .saves{grid-column:1 / -1; justify-self:end; font-size:.82rem; font-weight:500; color:var(--save-ink); font-feature-settings:"tnum" 1}
 .saves.zero{color:var(--ink-faint); font-weight:400}
 .chk{display:inline-flex; align-items:center; gap:9px; cursor:pointer; user-select:none; font-size:.86rem; color:var(--ink-soft)}
