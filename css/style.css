@@ -368,6 +368,10 @@ nav {
   background: linear-gradient(135deg, #0d1b2a 0%, #1b2d4a 60%, #c9a84c 100%);
 }
 
+.solution-card-img--taxcalc {
+  background: linear-gradient(135deg, #0f2f3d 0%, #0e7490 60%, #22d3ee 100%);
+}
+
 /* Mobile app card gradients */
 .solution-card-img--hawkersnap {
   background: linear-gradient(135deg, #7c2d12 0%, #c2410c 60%, #fb923c 100%);
@@ -446,6 +450,67 @@ nav {
   background: rgba(245, 158, 11, 0.08);
   border: 1px dashed rgba(245, 158, 11, 0.4);
   color: var(--yellow);
+  letter-spacing: 0.02em;
+  cursor: default;
+  user-select: none;
+}
+
+/* In-review product card state */
+.product-card.in-review {
+  opacity: 0.85;
+}
+.product-card.in-review:hover {
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(96,165,250,0.15);
+}
+.product-card.in-review::after {
+  background: linear-gradient(135deg, rgba(96,165,250,0.08) 0%, transparent 60%);
+}
+
+.review-btn {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: center;
+  background: rgba(96, 165, 250, 0.08);
+  border: 1px dashed rgba(96, 165, 250, 0.45);
+  color: #60a5fa;
+  letter-spacing: 0.02em;
+  cursor: default;
+  user-select: none;
+}
+
+/* Retired product card state */
+.product-card.retired {
+  opacity: 0.6;
+}
+.product-card.retired:hover {
+  border-color: rgba(106, 106, 138, 0.4);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(106,106,138,0.15);
+}
+.product-card.retired::after {
+  background: linear-gradient(135deg, rgba(106,106,138,0.08) 0%, transparent 60%);
+}
+.product-card.retired .solution-card-img {
+  filter: grayscale(0.7);
+}
+
+.retired-btn {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: center;
+  background: rgba(106, 106, 138, 0.08);
+  border: 1px dashed rgba(106, 106, 138, 0.45);
+  color: var(--text-muted);
   letter-spacing: 0.02em;
   cursor: default;
   user-select: none;
